@@ -8,4 +8,5 @@ My journey to Artificial Intelligence
 |Regression with catagorical feature | Linear Regression with a dataset having catagorical feature | 5/10/18 | [Link](/Linear%20Regression%20with%20Catagorical%20Features.ipynb)|
 |Logistic Regression | Linear Regression (Binary classification) | 8/10/18 | [Link](Logistic%20Regression.ipynb)|
 |Multiclass Logistic Regression | One vs All method | 22/10/18 | [Link](Multiclass%20Logistic%20Regression.ipynb)|
+|K Nearest Neibhbors | KNN for classification. before 2 hours I started learning it. and by now, it's implemented. It's easy | 31/10/18 | [Link](KNN.ipynb)|
 
