@@ -1,6 +1,6 @@
 
 def print_values(V, g):
-    for j in range(g.height):
+    for j in range(g.height-1, -1, -1):
         print("----------------------------")
         for i in range(g.width):
             v= V.get((i, j), 0)
@@ -11,7 +11,7 @@ def print_values(V, g):
         print("")
 
 def print_policy(P, g):
-    for j in range(g.height):
+    for j in range(g.height-1, -1, -1):
         print("---------------------------")
         for i in range(g.width):
             a= P.get((i, j), ' ')
