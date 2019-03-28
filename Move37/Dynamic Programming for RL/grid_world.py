@@ -68,6 +68,9 @@ class Grid:
     def all_states(self):
         return set(self.actions.keys()) | set(self.rewards.keys())
 
+
+
+
 def standard_grid(obey_prob= 1.0, step_cost= None):
     # .  .  .  1
     # .  x  . -1
