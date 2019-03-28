@@ -2,7 +2,7 @@ import numpy as np
 
 class Grid:
 
-    def init(self, width, height, start):
+    def __init__(self, width, height, start):
         # i is horizontal axis
         # j is vertical axis
         self.width= width
@@ -18,7 +18,7 @@ class Grid:
         self.obey_prob= obey_prob
 
     def non_terminal_states(self):
-        return actions.keys()
+        return self.actions.keys()
 
     def set_state(self, s):
         self.i, self.j= s
@@ -47,7 +47,7 @@ class Grid:
         probs= []
         state, reward= self.check_move(action)
         probs.append((self.obey_prob, reward, state))
-        disobey_prob= 1- obey_prob
+        disobey_prob= 1- self.obey_prob
         if(disobey_prob<= 0):
             return probs
         if(action== 'U' or action== 'D'):
