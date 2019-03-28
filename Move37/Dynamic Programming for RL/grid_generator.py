@@ -1,13 +1,16 @@
-def make_grid():
+from grid_world import Grid
+
+def make_grid(obey_prob= 1.0):
     draw= [
-        '.  .  .  1',
-        '.  x  . -1',
-        's  .  .  .'
+        '.  .  .  x  .  2',
+        '.  x  . -1  . -1',
+        '. -1  .  .  .  .',
+        '.  .  x  .  .  .',
+        's  .  x  .  .  1'
     ]
 
     height= len(draw)
     width= len(draw[0].split())
-    print("Height is {} and Width is {}".format(height, width))
     
     grid= [['.' for x in range(width)] for y in range(height)]
 
@@ -19,10 +22,6 @@ def make_grid():
             if(gg!= '.' and gg!= 'x' and gg!= 's'):
                 gg= int(gg.strip())
             grid[i][j]= gg 
-
-    print("\n---------------")
-    for g in grid:
-        print(g)
 
     start= (0,0)
     rewards= {}
@@ -49,12 +48,19 @@ def make_grid():
                 actions[(j, ii)]= moves
 
 
+    print("Height is {} and Width is {}".format(height, width))
     print("Starting Point: {}".format(start))
     print("Rewards: {}".format(rewards))
     print("Actions: ")
+
     for key, value in actions.items():
         print(key, ":", value)
 
+
+    final_grid= Grid(width, height, start)
+    final_grid.set(rewards, actions, obey_prob)
+
+    return final_grid
 
 
 
