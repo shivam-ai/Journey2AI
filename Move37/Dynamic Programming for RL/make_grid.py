@@ -26,6 +26,7 @@ def make_grid():
 
     start= (0,0)
     rewards= {}
+    actions= {}
     for i in range(height):
         for j in range(width):
             value= grid[i][j]
@@ -34,8 +35,25 @@ def make_grid():
                 start= (j,ii)
             if(type(value)==int):
                 rewards[(j,ii)]= value
-    print(start)
-    print(rewards)
+
+            if(value=='s' or value=='.'):
+                moves= []
+                if(i>0 and grid[i-1][j]!= 'x'):
+                    moves.append('U')
+                if(i<height-1 and grid[i+1][j]!= 'x'):
+                    moves.append('D')
+                if(j>0 and grid[i][j-1]!= 'x'):
+                    moves.append('L')
+                if(j<width-1 and grid[i][j+1]!= 'x'):
+                    moves.append('R')
+                actions[(j, ii)]= moves
+
+
+    print("Starting Point: {}".format(start))
+    print("Rewards: {}".format(rewards))
+    print("Actions: ")
+    for key, value in actions.items():
+        print(key, ":", value)
 
 
 
