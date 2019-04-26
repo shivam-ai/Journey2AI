@@ -2,6 +2,7 @@ import numpy as np
 from grid_world import standard_grid
 from utils import print_policy, print_values
 from grid_world import Grid
+from grid_generator import make_grid
 
 
 SMALL_ENOUGH= 1e-3
@@ -66,7 +67,9 @@ def calculate_greedy_policy(grid, V):
 
 
 if(__name__== '__main__'):
-    grid= standard_grid(obey_prob=1.0, step_cost=None)
+    #grid= standard_grid(obey_prob=1.0, step_cost=None)
+    grid= make_grid(obey_prob= 1.0)
+
     print("Rewards: ")
     print_values(grid.rewards, grid)
 
