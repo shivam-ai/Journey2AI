@@ -1,7 +1,7 @@
 import gym
 
-env= gym.make('CartPole-v0')
-env= gym.make('Go9x9-v0')
+#env= gym.make('CartPole-v0')
+env= gym.make('Hero-v4')
 
 for i_episode in range(10):
     observation= env.reset()
@@ -12,5 +12,5 @@ for i_episode in range(10):
         observation, reward, done, info= env.step(action)
         if(done):
             print("Episode finished in {} timesteps.".format(k+1))
-            break
+            #break
 env.close()

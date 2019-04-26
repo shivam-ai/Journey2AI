@@ -33,14 +33,15 @@ def run_episode(env, parameters):
 
 
 
+
 bestparams= None
 bestreward= 0
 
-'''
 # Random serarch
 for i in range(100):
     parameters= np.random.rand(4) * 2-1 
     reward= run_episode(env, parameters)
+    print("reward in {} episode is {}".format(i, reward))
     if(reward > bestreward):
         bestreward= reward
         bestparams= parameters
@@ -64,6 +65,6 @@ for i in range(100):
         if(reward == 200):
             print("Done")
             break
-
+'''
 
 env.close()
