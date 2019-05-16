@@ -34,7 +34,8 @@ def calculate_values(grid):
     states= grid.all_states()
     for s in states:
         V[s]= 0
-
+    print("Before")
+    print(V)
     while(True):
         biggest_change= 0
         for s in grid.non_terminal_states():
@@ -45,6 +46,9 @@ def calculate_values(grid):
 
         if(biggest_change< SMALL_ENOUGH):
             break
+        print('Next values are :') 
+        print_values(V, grid)
+        print('.'*30)
     return V 
 
 def initialize_random_policy(grid):
