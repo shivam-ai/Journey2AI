@@ -1,7 +1,7 @@
 import gym
 
 env= gym.make('CartPole-v0')
-env= gym.make('Go9x9-v0')
+env= gym.make('FrozenLake-v0')
 
 for i_episode in range(10):
     observation= env.reset()
